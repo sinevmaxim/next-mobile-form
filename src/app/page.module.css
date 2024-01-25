@@ -1,56 +1,157 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin: 0 auto;
-  max-width: 560px;
-  text-align: center;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+    height: 100vh;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(227, 244, 244, 1) 0%,
+        rgba(210, 233, 233, 1) 100%
+    );
 }
 .content {
-  align-items: center;
-  display: flex;
-  flex: 1 1;
-  flex-direction: column;
-  overflow: hidden;
-  padding: 32px;
-  font-size: 24px;
+    align-items: center;
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 16px;
+}
+
+.headerText {
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 32px;
+}
+.descriptionText {
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 32px;
 }
 
 .formWrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  padding: 16px;
-  margin: 8px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    padding: 16px;
+    margin: 16px 8px;
+}
+.inputWrapper {
+    position: relative;
+}
+
+.inputLabel {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: black;
+    padding: 0 5px;
+    border-radius: 8px;
+    color: white;
 }
 .formTextInput {
-  padding: 8px 4px;
-  width: 96px;
-  border-radius: 8px;
-  border-color: #eee;
-  font-size: 20px;
-  transition: 0.3s;
-  outline: none;
-  background-color: #dee5f9;
+    padding: 8px 4px;
+    width: 96px;
+    border-radius: 8px;
+    font-size: 20px;
+    transition: 0.3s;
+    border: 3px solid #eee;
+    outline: none;
 }
 
 .formTextInput:focus {
-  border-color: blue;
+  border: 3px solid black;
+
 }
 
 .submitButton {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  padding: 8px;
-  font-size: 20px;
-  background-color: #08d;
-  cursor: pointer;
-  border-radius: 8px;
-  border: 0;
-  color: white;
+    padding: 8px;
+    font-size: 20px;
+    background: white;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 3px solid black;
+    color: black;
+    background-color: white;
 }
 
 .submitButton:active {
-  background-color: #06b;
+    background-color: #c4dfdf;
+    color: black;
+}
+
+.progressContainer {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.progressContainer::before {
+    content: "";
+    position: absolute;
+    background: white;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: 1;
+}
+
+.progress {
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: 1;
+    transition: 0.4s ease-in;
+}
+
+.step,
+.step_active {
+    background: white;
+    color: black;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 0.4s ease-in;
+}
+
+.step_active {
+    background: black;
+    color: white;
+}
+
+.errorMessage {
+    color: red;
+}
+
+@media only screen and (min-width: 320px) {
+    .formWrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .submitButton {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .progressContainer {
+        width: 400px;
+    }
 }
