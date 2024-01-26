@@ -60,7 +60,7 @@
     border-radius: 8px;
     font-size: 20px;
     transition: 0.3s;
-    border: 3px solid #eee;
+    border: 3px solid black;
     outline: none;
 }
 
@@ -81,8 +81,8 @@
 }
 
 .submitButton:active {
-    background-color: #c4dfdf;
-    color: black;
+    background-color: #fb4444;;
+    color: white;
 }
 
 .progressContainer {
@@ -96,7 +96,7 @@
 .progressContainer::before {
     content: "";
     position: absolute;
-    background: white;
+    background: black;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
@@ -106,7 +106,7 @@
 }
 
 .progress {
-    background: black;
+    background: #fb4444;
     position: absolute;
     top: 50%;
     left: 0;
@@ -119,8 +119,8 @@
 
 .step,
 .step_active {
-    background: white;
-    color: black;
+    background: black;
+    color: white;
     height: 25px;
     width: 25px;
     display: flex;
@@ -132,7 +132,7 @@
 }
 
 .step_active {
-    background: black;
+    background: #fb4444;;
     color: white;
 }
 
